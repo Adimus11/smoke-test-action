@@ -1,0 +1,21 @@
+name: 'Smoke Tests'
+description: 'Simple action for basic smoke test'
+inputs:
+  service_name:
+    description: 'Test suite for service'
+    required: true
+    default: 'superapp'
+  service_host:
+    description: 'Host for service to test'
+    required: true
+    default: 'localhost'
+  service_port:
+    description: 'Port for service to test'
+    required: true
+    default: "8080"
+outputs:
+  passed:
+    description: 'Number of passed tests in format: {passed}/{all}'
+runs:
+  using: 'node12'
+  main: 'index.js'
